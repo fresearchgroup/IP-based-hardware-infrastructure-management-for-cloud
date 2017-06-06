@@ -1,0 +1,12 @@
+NAGIOS:
+1.	Uses text files to monitor the system. Good if automation is to be done.
+2.	No graphical support for monitoring.
+3.	Uses less resources because it stores information in form of text files.
+4.	Better ipmi results
+
+ZABBIX:
+1.	Uses web configuration for monitoring, taking information for it’s database.
+2.	Has graphical support.
+3.	Uses more resources because it stores all information in database.
+4.	Ipmi results not that informative
+

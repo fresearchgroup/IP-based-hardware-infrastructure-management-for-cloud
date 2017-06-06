@@ -1,0 +1,82 @@
+------------- debug output for sel (-vvv is set): ------------
+  /usr/sbin/ipmi-sel was executed with the following parameters:
+    /usr/sbin/ipmi-sel -h 10.129.36.161 -u test1 -p test123 -l admin --driver-type=LAN_2_0 --output-event-state --interpret-oem-data --entity-sensor-names --sensor-types=all --exclude-sensor-types=
+  output of FreeIPMI:
+ID | Date        | Time     | Name                                             | Type                        | State    | Event
+1  | Jun-01-2017 | 09:06:44 | System Board System Event Log                    | Event Logging Disabled      | Nominal  | Log Area Reset/Cleared
+2  | Jun-05-2017 | 07:07:17 | System Board Bad User PWD                        | Session Audit               | Warning  | Invalid Username or Password ; OEM Event Data2 code = 03h ; OEM Event Data3 code = 03h
+3  | Jun-05-2017 | 07:07:17 | System Board Bad User PWD                        | Session Audit               | Warning  | Invalid Username or Password ; OEM Event Data2 code = 03h ; OEM Event Data3 code = 03h
+4  | Jun-05-2017 | 10:29:32 | System Board Bad User PWD                        | Session Audit               | Warning  | Invalid Username or Password ; OEM Event Data2 code = 03h ; OEM Event Data3 code = 03h
+5  | Jun-05-2017 | 10:29:32 | System Board Bad User PWD                        | Session Audit               | Warning  | Invalid Username or Password ; OEM Event Data2 code = 03h ; OEM Event Data3 code = 03h
+------------- debug output for sensors (-vvv is set): ------------
+  script was executed with the following parameters:
+    ./check_ipmi_sensor -H 10.129.36.161 -U test1 -P test123 -L admin -vvv
+  check_ipmi_sensor version:
+    3.12
+  FreeIPMI version:
+    ipmi-sensors - 1.4.11
+  FreeIPMI was executed with the following parameters:
+    /usr/sbin/ipmi-sensors -h 10.129.36.161 -u test1 -p test123 -l admin --quiet-cache --sdr-cache-recreate --interpret-oem-data --output-sensor-state --ignore-not-available-sensors --driver-type=LAN_2_0 --output-sensor-thresholds
+  FreeIPMI return code: 0
+  output of FreeIPMI:
+ID | Name             | Type                        | State    | Reading    | Units | Lower NR   | Lower C    | Lower NC   | Upper NC   | Upper C    | Upper NR   | Event
+1  | Pwr Unit Status  | Power Unit                  | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+2  | IPMI Watchdog    | Watchdog 2                  | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+3  | Physical Scrty   | Physical Security           | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+4  | FP NMI Diag Int  | Critical Interrupt          | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+5  | SMI Timeout      | OEM Reserved                | N/A      | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+6  | System Event Log | Event Logging Disabled      | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'Log Area Reset/Cleared'
+7  | System Event     | System Event                | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+8  | Button           | Button/Switch               | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+9  | BMC Watchdog     | Management Subsystem Health | N/A      | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+10 | VR Watchdog      | Voltage                     | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+11 | SSB Therm Trip   | Temperature                 | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+12 | BMC FW Health    | Management Subsystem Health | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+13 | System Airflow   | Other Units Based Sensor    | Nominal  | 0.00       | CFM   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+17 | SSB Temp         | Temperature                 | Nominal  | 47.00      | C     | N/A        | 0.00       | 5.00       | 98.00      | 103.00     | N/A        | 'OK'
+18 | P1 VRD Temp      | Temperature                 | Nominal  | 46.00      | C     | N/A        | 0.00       | 5.00       | 110.00     | 115.00     | N/A        | 'OK'
+19 | MEM VRM Temp     | Temperature                 | Nominal  | 36.00      | C     | N/A        | 0.00       | 5.00       | 110.00     | 115.00     | N/A        | 'OK'
+20 | MEM EFVRD Temp   | Temperature                 | Nominal  | 44.00      | C     | N/A        | 0.00       | 5.00       | 110.00     | 115.00     | N/A        | 'OK'
+21 | LAN/BMC Temp     | Temperature                 | Nominal  | 45.00      | C     | N/A        | 0.00       | 5.00       | 110.00     | 115.00     | N/A        | 'OK'
+22 | Front Temp       | Temperature                 | Nominal  | 33.00      | C     | N/A        | 0.00       | 5.00       | 110.00     | 115.00     | N/A        | 'OK'
+23 | LAN NIC Temp     | Temperature                 | Nominal  | 55.00      | C     | N/A        | 0.00       | 5.00       | 115.00     | 120.00     | N/A        | 'OK'
+24 | CATERR           | Processor                   | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+26 | CPU Missing      | Processor                   | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+27 | DIMM Thrm Mrgn 1 | Temperature                 | Nominal  | -53.00     | C     | N/A        | N/A        | N/A        | 5.00       | 10.00      | N/A        | 'OK'
+28 | DIMM Thrm Mrgn 2 | Temperature                 | Nominal  | -53.00     | C     | N/A        | N/A        | N/A        | 5.00       | 10.00      | N/A        | 'OK'
+29 | DIMM Thrm Mrgn 3 | Temperature                 | Nominal  | -48.00     | C     | N/A        | N/A        | N/A        | 5.00       | 10.00      | N/A        | 'OK'
+30 | DIMM Thrm Mrgn 4 | Temperature                 | Nominal  | -44.00     | C     | N/A        | N/A        | N/A        | 5.00       | 10.00      | N/A        | 'OK'
+31 | Voltage Fault    | Voltage                     | Nominal  | N/A        | N/A   | N/A        | N/A        | N/A        | N/A        | N/A        | N/A        | 'OK'
+32 | BB +3.3V Vbat    | Voltage                     | Nominal  | 3.12       | V     | N/A        | 2.12       | 2.44       | N/A        | N/A        | N/A        | 'OK'
+33 | BB +12.0V        | Voltage                     | Nominal  | 12.05      | V     | N/A        | 10.62      | 11.00      | 13.31      | 13.70      | N/A        | 'OK'
+
+--------------------- end of debug output ---------------------
+IPMI Status: Warning [4 system event log (SEL) entries present - details: (System Board Bad User PWD = Warning, Session Audit, Invalid Username or Password ; OEM Event Data2 code = 03h ; OEM Event Data3 code = 03h), (System Board Bad User PWD = Warning, Session Audit, Invalid Username or Password ; OEM Event Data2 code = 03h ; OEM Event Data3 code = 03h), (System Board Bad User PWD = Warning, Session Audit, Invalid Username or Password ; OEM Event Data2 code = 03h ; OEM Event Data3 code = 03h), (System Board Bad User PWD = Warning, Session Audit, Invalid Username or Password ; OEM Event Data2 code = 03h ; OEM Event Data3 code = 03h) - fix the reported issues and clear your SEL or exclude specific SEL entries using the -sx or -xST option] | 'System Airflow'=0.00 'SSB Temp'=47.00;5.00:98.00;0.00:103.00 'P1 VRD Temp'=46.00;5.00:110.00;0.00:115.00 'MEM VRM Temp'=36.00;5.00:110.00;0.00:115.00 'MEM EFVRD Temp'=44.00;5.00:110.00;0.00:115.00 'LAN/BMC Temp'=45.00;5.00:110.00;0.00:115.00 'Front Temp'=33.00;5.00:110.00;0.00:115.00 'LAN NIC Temp'=55.00;5.00:115.00;0.00:120.00 'DIMM Thrm Mrgn 1'=-53.00;~:5.00;~:10.00 'DIMM Thrm Mrgn 2'=-53.00;~:5.00;~:10.00 'DIMM Thrm Mrgn 3'=-48.00;~:5.00;~:10.00 'DIMM Thrm Mrgn 4'=-44.00;~:5.00;~:10.00 'BB +3.3V Vbat'=3.12;2.44:;2.12: 'BB +12.0V'=12.05;11.00:13.31;10.62:13.70
+Pwr Unit Status = 'OK' (Status: Nominal)
+IPMI Watchdog = 'OK' (Status: Nominal)
+Physical Scrty = 'OK' (Status: Nominal)
+FP NMI Diag Int = 'OK' (Status: Nominal)
+System Event Log = 'Log Area Reset/Cleared' (Status: Nominal)
+System Event = 'OK' (Status: Nominal)
+Button = 'OK' (Status: Nominal)
+VR Watchdog = 'OK' (Status: Nominal)
+SSB Therm Trip = 'OK' (Status: Nominal)
+BMC FW Health = 'OK' (Status: Nominal)
+System Airflow = 0.00 (Status: Nominal)
+SSB Temp = 47.00 (Status: Nominal)
+P1 VRD Temp = 46.00 (Status: Nominal)
+MEM VRM Temp = 36.00 (Status: Nominal)
+MEM EFVRD Temp = 44.00 (Status: Nominal)
+LAN/BMC Temp = 45.00 (Status: Nominal)
+Front Temp = 33.00 (Status: Nominal)
+LAN NIC Temp = 55.00 (Status: Nominal)
+CATERR = 'OK' (Status: Nominal)
+CPU Missing = 'OK' (Status: Nominal)
+DIMM Thrm Mrgn 1 = -53.00 (Status: Nominal)
+DIMM Thrm Mrgn 2 = -53.00 (Status: Nominal)
+DIMM Thrm Mrgn 3 = -48.00 (Status: Nominal)
+DIMM Thrm Mrgn 4 = -44.00 (Status: Nominal)
+Voltage Fault = 'OK' (Status: Nominal)
+BB +3.3V Vbat = 3.12 (Status: Nominal)
+BB +12.0V = 12.05 (Status: Nominal)
+

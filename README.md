@@ -18,8 +18,13 @@ The aim of this project is to build a hardware infrastructure manager using IPMI
 References:
  
 https://www.taashee.com/nagios
+
 http://collaboration.cmc.ec.gc.ca/science/rpn/biblio/ddj/Website/articles/SA/v14/i03/a5.htm
+
 http://docs.opennebula.org/4.12/administration/monitoring/mon.html#the-monitor-metrics
+
 http://openipmi.sourceforge.net/
+
 https://www.docker.com/what-docker
+
 https://www.docker.com/what-container

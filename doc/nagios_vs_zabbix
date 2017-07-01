@@ -1,12 +1,27 @@
-NAGIOS:
-1.	Uses text files to monitor the system. Good if automation is to be done.
-2.	No graphical support for monitoring.
-3.	Uses less resources because it stores information in form of text files.
-4.	Better ipmi results
+Nagios
+1.First version was introduced in 1999
+2.Shows status of various parameters/ devices.
+3.To add another instance or host, need to configure various files manually.
+4.Doesn't use any database to store information
+5.Installation and management is complex
+6.It follows bazaar paradigm
+7.Provides a huge plugin library for the community
+8.It can work with enterprise tools
+9.Need to add various add-ons for proper functioning 
+10.Large community
+11.Need to add plugins for visualization
+12.Better performances because it directly use file system
 
-ZABBIX:
-1.	Uses web configuration for monitoring, taking information for it’s database.
-2.	Has graphical support.
-3.	Uses more resources because it stores all information in database.
-4.	Ipmi results not that informative
-
+Zabbix
+1.First version was introduced in 2001
+2.Shows performances as well as status of various devices
+3.It provides a web management which allows central management without configuring files manually. 
+4.Uses database to store information
+5.Installation and management is comparatively easy 
+6.It follows cathedral paradigm
+7.Does not have "official" plugin library
+8.It can't work with enterprise tools
+9.Doesn't need to add many add-ons 
+10.Relatively smaller community 
+11.For Visualizations plugins are prebuilt
+12.Comparatively slow performance as uses database 

@@ -28,3 +28,6 @@ http://openipmi.sourceforge.net/
 https://www.docker.com/what-docker
 
 https://www.docker.com/what-container
+
+###PHP Scripts
+Save all the files in /var/www/html/

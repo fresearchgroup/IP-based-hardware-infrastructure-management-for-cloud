@@ -1,12 +1,19 @@
 <?php
 	
-//$page = $_SERVER['PHP_SELF'];
-//$sec = "60";
+	# This program is free software; you can redistribute it and/or modify it under
+	# the terms of the GNU General Public License as published by the Free Software
+	# Foundation;
+
+
+	# To display the details of all the sensors of the server. These details are coming through IPMI and 
+	# Nagios stores its information in status.dat present at /usr/local/nagio/var. 
+	# To Get the details we use check_ipmi_sensor.pl present at /usr/local/nagios/libexec. 
+	# The respective host of which we want to show details, its information is passed through URL. 
+	# The changes for sending the name of the server are done in extinfo.c.  After every 60 seconds, this file get refreshed.
 
  $file = fopen("/usr/local/nagios/var/status.dat", "r") or exit("Unable to open file!"); //path to nagios file
-$serverName= $_SERVER['REQUEST_URI'];
-$serverName= substr($serverName,strpos($serverName,'?')+1, strlen($serverName) );
-//echo $serverName;
+ $serverName= $_SERVER['REQUEST_URI'];
+ $serverName= substr($serverName,strpos($serverName,'?')+1, strlen($serverName) );
  $refreshvalue = 60; //value in seconds to refresh page
  
  $collastcheck=true; //true/false to show last checked date column in table
@@ -35,7 +42,6 @@ $syshealth=array("BMC FW Health ");
 			<body>
 	<meta http-equiv="refresh" content="<?php echo($refreshvalue); ?>">
  <title><?php echo($pagetitle); ?></title>
-	<!-- <meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'">-->	
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>				
@@ -82,8 +88,6 @@ color:black;
 </center>
  
 <script> 
-<!-- 
-// 
  var milisec=0 
  var seconds=<?php echo($refreshvalue); ?> 
  document.countdown.secs.value='<?php echo($refreshvalue); ?>' 
@@ -103,7 +107,6 @@ function display(){
     setTimeout("display()",100) 
 } 
 display() 
---> 
 </script>  
  
 
@@ -262,14 +265,10 @@ while(!feof($file)){ //begin while through nagios status.dat
   	 $currpos = strpos($line,$currstate);
 	  if ($hostpos!==false)
 	 	$checkHostName=substr($line,strpos($line,'=')+1,strlen($line)); 
-	 //  if ($currpos!==false)
-	 //    $state=substr($line,strpos($line,'=')+1,strlen($line)); 
-   
 	  if ($plugpos!==false){
    		 $servicecount++;
 		 //variable to check if we have encoutered IPMI service
     		 $checkIPMI = substr($line,strpos($line,'=')+1,4);
-      		 // $line = fgets($file);
 	     	 $check=1;
   	  }
 	  //condition checks if IPMI service has been encountered
@@ -291,9 +290,7 @@ while(!feof($file)){ //begin while through nagios status.dat
         		}
         		else {
           			$end=1;     
-	 	
-				//          $t1=substr($temp,0,strlen($temp));
-        		}
+	        	}
 			$t2=substr($temp2,0,strpos($temp2,')'));
 			$t2=substr($t2,strpos($t2,':')+1,strlen($t2));
 			$temp2=substr($temp2,strpos($temp2,')')+3,strlen($temp2));
@@ -301,7 +298,6 @@ while(!feof($file)){ //begin while through nagios status.dat
           			$status_bgcolor = "LIMEGREEN";
           			$status_text = "OK";
         			}
-			//$st=stype($t);
 			$tosearch='Fan';
 			if (in_array($t,$temperature) || (stripos($t,"Therm")!=false) || (stripos($t,"Temp")!=false))
 				$sensortype="Temperature";
@@ -329,8 +325,7 @@ while(!feof($file)){ //begin while through nagios status.dat
 				$sensortype="Watchdog 2";
 			elseif (in_array($t,$syshealth))
 				$sensortype="Management Subsystem Health";
-       			// $temp=substr($temp,strpos($temp,' ')+1,strlen($temp));
-			if(!strpos($t1, '.') && ($t!=="")){
+       			if(!strpos($t1, '.') && ($t!=="")){
 ?>
   
 			<tr>
@@ -346,18 +341,7 @@ while(!feof($file)){ //begin while through nagios status.dat
 			</tr>
 <?php 
         		}
-			/*if (in_array($t,$temperature))
-			{
-				$sensortype="Temperature";
-				echo "DEEFEF";
-				//$a1++;
-			}*/
-			/*if (array_key_exists($t,$temperature))
-			{
-				$volarray[0]=$t;
-				//$a2++;
-			}*/
-        		$pcount++;
+			$pcount++;
       		} //inner while loop ends
     	
 
@@ -421,7 +405,6 @@ while(!feof($file)){ //begin while through nagios status.dat
           $status_bgcolor = "GREY";
           $status_text = "UNKNOWN";
         }
-	//$st=stype($t);
 	if (in_array($t,$temperature)|| (stripos($t,"Therm")!=false) || (stripos($t,"Temp")!=false))
 		$sensortype="Temperature";
 	elseif (in_array($t,$voltage))

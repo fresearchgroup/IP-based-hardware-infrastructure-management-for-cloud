@@ -13,3 +13,6 @@ htmlremove.php: The frontend is written in PHP to take the input of host name wh
 htmlservice.php: The frontend is written in PHP to take input for hostname as well as which service we want to add. These details then pass to formservices.php
 
 index.php: To display the details of all the sensors of the server. These details are coming through IPMI and Nagios stores its information in status.dat present at /usr/local/nagio/var. To Get the details we use check_ipmi_sensor.pl present at /usr/local/nagios/libexec. The respective host of which we want to show details, its information is passed through URL. The changes for sending the name of the server are done in extinfo.c.  After every 60 seconds, this file get refreshed 
+
+Trouble Shooting
+Make sure each file have appropriate permissions

@@ -1,10 +1,17 @@
 <html>
-	<!---AIM: TO ADD SERVICE TO THE HOST -->
-	<!-- SAVE THIS FILE AT LOCATION /var/www/html/formservices.php -->
 <body>
 
 
 <?php 
+	# This program is free software; you can redistribute it and/or modify it under
+	# the terms of the GNU General Public License as published by the Free Software	
+	# Foundation;
+	# AIM: TO ADD SERVICE TO THE HOST 
+	# SAVE THIS FILE AT LOCATION /var/www/html/formservices.php 
+	
+	
+	
+	
 	#chdir = change directory
 	chdir('/usr/local/nagios/etc/objects');
 

@@ -1,10 +1,16 @@
 <html>
 <body>
-<!--- AIM: TO REMOVE ALREADY ADDED HOST FROM NAGIOS  -->
-<!--- SAVE THIS FILE AT LOCATION: /var/www/html/formremove.php -->
 
 <?php 
-
+	# This program is free software; you can redistribute it and/or modify it under
+	# the terms of the GNU General Public License as published by the Free Software
+	# Foundation;
+	# AIM: TO REMOVE ALREADY ADDED HOST FROM NAGIOS 
+	# SAVE THIS FILE AT LOCATION: /var/www/html/formremove.php
+	
+	
+	
+	
 	#chdir = change directory
 	chdir('/usr/local/nagios/etc/objects');
 

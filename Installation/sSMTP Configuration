@@ -1,0 +1,33 @@
+
+
+sSMTP Configuration
+
+1.Install ssmtp:
+    sudo apt-get install ssmtp
+
+2.Make changes in ssmtp.conf file:
+
+    gksu gedit /etc/ssmtp/ssmtp.conf
+
+    root = Your Email Address
+
+    mailhub = smtp.cse.iitb.ac.in
+
+    rewriteDomain = cse.iitb.ac.in
+
+    AuthUser = Your Email Address
+
+    AuthPass = Your Password
+
+    fromLineOverride = YES
+
+    UseTLS = YES
+
+    UseSTARTTLS = YES
+
+3.Write into file /etc/ssmtp/revaliases
+
+    root: Your Email:mail.cse.iitb.ac.in:25
+
+4.Give your email address in /usr/local/nagios/etc/objects/contacts.cfg
+

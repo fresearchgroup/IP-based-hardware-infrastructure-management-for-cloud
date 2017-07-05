@@ -1,6 +1,9 @@
 <?php
-	//AIM:	ADD HOST TO NAGIOS CORE
-	//Save this file at location: /var/www/html/form.php
+	# This program is free software; you can redistribute it and/or modify it under
+	# the terms of the GNU General Public License as published by the Free Software
+	# Foundation;
+	# AIM:	ADD HOST TO NAGIOS CORE
+	# Save this file at location: /var/www/html/form.php
 ?>
 
 <html>

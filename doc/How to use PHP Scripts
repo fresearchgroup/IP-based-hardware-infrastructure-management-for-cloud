@@ -1,9 +1,12 @@
 ## PHP Scripts
 Add the following files (present in PHP scripts ) at /var/www/html/
 
-form.php
-formremove.php
-formservice.php
-htmlremove.php
-htmlservice.php
-index.php
+form.php: PHP form to add a new host. We create a new .cfg file for host at /usr/local/nagios/etc/objects. Then define host as well as PING as a default service.
+
+formremove.php: To remove already existing host. In this file, we are removing host's cfg file as well as removing host's cfg details from nagios.cfg (Present at /usr/local/nagios/etc/objects)
+
+formservice.php: Backend for file htmlservice.php. It adds service defination to respective host's cfg file. Host's cfg file is present at /usr/local/nagios/etc/objects.
+
+htmlremove.php: The frontend is written in PHP to take the input of host name which we want to remove. The information of host name is passed to formremove.php.
+
+htmlservice.php: The frontend is written in PHP to take input for hostname as well as which service we want to add. These details then pass to formservices.php

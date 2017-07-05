@@ -1,0 +1,9 @@
+## PHP Scripts
+Add the following files (present in PHP scripts ) at /var/www/html/
+
+form.php
+formremove.php
+formservice.php
+htmlremove.php
+htmlservice.php
+index.php

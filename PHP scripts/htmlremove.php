@@ -1,7 +1,10 @@
 
 <html>
-<!---AIM: FORM TO TAKE INPUT FOR HOST NAME WHICH USER WANT TO REMOVE FROM HOST -->
-<!--- SAVE THIS FILE AT LOCATION: /var/www/html/htmlremove.php-->
+<!-- This program is free software; you can redistribute it and/or modify it under 
+     the terms of the GNU General Public License as published by the Free Software
+     Foundation;	
+     AIM: FORM TO TAKE INPUT FOR HOST NAME WHICH USER WANT TO REMOVE FROM HOST 
+     SAVE THIS FILE AT LOCATION: /var/www/html/htmlremove.php	-->
 
 	<body>
 	<!---formremove: php file to remove the host -->
